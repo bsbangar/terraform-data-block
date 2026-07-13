@@ -3,3 +3,5 @@ variable "vnets" {}
 variable "snets" {}
 variable "nics" {}
 variable "pips" {}
+variable "sas" {}
+variable "scs" {}
