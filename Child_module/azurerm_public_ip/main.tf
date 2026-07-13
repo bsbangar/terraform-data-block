@@ -1,0 +1,14 @@
+resource "azurerm_public_ip" "pipsc" {
+  for_each = var.pipsc
+  name = each.value.name
+  location = each.value.location
+  resource_group_name = each.value.resource_group_name
+ allocation_method = "Static"
+ sku = "Standard"
+}
+
+# data "azurerm_public_ip" "pip_data" {
+#     for_each = var.pipsc
+#   name = each.value.name
+#   resource_group_name = each.value.resource_group_name
+# }
