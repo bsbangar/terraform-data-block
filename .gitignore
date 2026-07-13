@@ -28,3 +28,6 @@ terraform.rc
 
 # Terragrunt specific
 .terragrunt-cache/   
+
+# ignore provider
+provider.tf
