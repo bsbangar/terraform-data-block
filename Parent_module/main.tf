@@ -28,13 +28,19 @@ module "public_ip" {
 }
 
 module "storage_acoount" {
-  source = "../Child_module/azurerm_Storage_account"
-  sasc=var.sas
+  source     = "../Child_module/azurerm_Storage_account"
+  sasc       = var.sas
   depends_on = [module.resource_group]
 }
 
 module "storage_container" {
-  source = "../Child_module/azurerm_storage_container"
-  scsc = var.scs
-  depends_on = [ module.storage_acoount ]
+  source     = "../Child_module/azurerm_storage_container"
+  scsc       = var.scs
+  depends_on = [module.storage_acoount]
+}
+
+module "azurerm_linux_virtual_machine" {
+  source     = "../Child_module/azurerm_linux_virtual_machine"
+  vmsc       = var.vms
+   depends_on = [module.network_interface]
 }

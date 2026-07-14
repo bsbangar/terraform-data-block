@@ -5,3 +5,4 @@ variable "nics" {}
 variable "pips" {}
 variable "sas" {}
 variable "scs" {}
+variable "vms" {}
