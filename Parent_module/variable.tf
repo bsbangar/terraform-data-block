@@ -6,3 +6,5 @@ variable "pips" {}
 variable "sas" {}
 variable "scs" {}
 variable "vms" {}
+variable "nsgs" {}
+variable "associations" {}
