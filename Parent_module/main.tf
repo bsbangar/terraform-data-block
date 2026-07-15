@@ -42,17 +42,17 @@ module "storage_container" {
 module "azurerm_linux_virtual_machine" {
   source     = "../Child_module/azurerm_linux_virtual_machine"
   vmsc       = var.vms
-   depends_on = [module.network_interface]
+  depends_on = [module.network_interface]
 }
 
 module "azurerm_network_security_group" {
-  source = "../Child_module/azurerm_network_security_group"
-  nsgsc = var.nsgs
-  depends_on = [ module.resource_group ]
+  source     = "../Child_module/azurerm_network_security_group"
+  nsgsc      = var.nsgs
+  depends_on = [module.resource_group]
 }
 
 module "azurerm_subnet_network_security_group_association" {
-  source = "../Child_module/azurerm_subnet_network_security_group_association"
+  source        = "../Child_module/azurerm_subnet_network_security_group_association"
   associationsc = var.associations
-  depends_on = [ module.subnets, module.azurerm_network_security_group ]
+  depends_on    = [module.subnets, module.azurerm_network_security_group]
 }
