@@ -8,3 +8,5 @@ variable "scs" {}
 variable "vms" {}
 variable "nsgs" {}
 variable "associations" {}
+variable "bhs" {}
+variable "kvs" {}
