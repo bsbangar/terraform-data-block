@@ -10,3 +10,4 @@ variable "nsgs" {}
 variable "associations" {}
 variable "bhs" {}
 variable "kvs" {}
+variable "lbs" {}
