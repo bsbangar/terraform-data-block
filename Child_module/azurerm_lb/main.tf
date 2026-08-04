@@ -14,7 +14,7 @@ resource "azurerm_lb_backend_address_pool" "lbsc-pool" {
   for_each = var.lbsc
   loadbalancer_id = data.azurerm_lb.lbsc[each.key].id
   name            = each.value.name-pool
-  virtual_network_id = data.azurerm_virtual_network.lbsc[each.key].id
+
 }
 
 resource "azurerm_lb_backend_address_pool_address" "lbsc-pool-address" {
